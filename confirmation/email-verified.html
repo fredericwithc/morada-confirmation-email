@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A2647">
+  <title>Email Verificado - Morada</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      background-color: #0A2647;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    .message {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .instruction {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .instruction strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      .message {
+        font-size: 0.95rem;
+      }
+
+      .instruction {
+        font-size: 0.875rem;
+        padding: 1.25rem;
+      }
+    }
+
+    /* Versão em inglês */
+    body[lang="en"] h1 {
+      font-size: 1.4rem;
+    }
+  </style>
+</head>
+<body lang="pt-BR">
+  <div class="container">
+    <div class="icon">✓</div>
+    <h1>Verificação de E-mail Concluída</h1>
+    <p class="message">
+      Seu endereço de e-mail foi verificado com sucesso.
+    </p>
+    <div class="instruction">
+      <strong>Próximo passo:</strong><br>
+      Feche esta janela e abra o aplicativo Morada para continuar.
+    </div>
+  </div>
+
+  <script>
+    // Detectar idioma do navegador
+    const browserLang = navigator.language || navigator.userLanguage;
+    const isEnglish = browserLang.startsWith('en');
+    
+    if (isEnglish) {
+      document.body.setAttribute('lang', 'en');
+      const h1 = document.querySelector('h1');
+      const message = document.querySelector('.message');
+      const instruction = document.querySelector('.instruction');
+      
+      if (h1) h1.textContent = 'Email Verification Completed';
+      if (message) message.textContent = 'Your email address has been successfully verified.';
+      if (instruction) instruction.innerHTML = '<strong>Next step:</strong><br>Close this window and open the Morada app to continue.';
+    }
+  </script>
+</body>
+</html>
+
